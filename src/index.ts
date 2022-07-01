@@ -25,37 +25,68 @@ person =
     ["hi", 2, [false, "anotherstring"] ]
 ]
 
+
+
 // objects...
 type user = {
     // union types...
     id: number | string,
     name: string
 }
+
 let u1:user = {
     id: 1,
     name: "Muhammad Aqib"
 }
+
+// use interface for objects...
+interface student{
+    readonly regNo: string | number,   //can't change only read
+    name: string,
+    class: string,
+    phone?: number  //optional
+}
+const std1:student = {
+    regNo: "19pwbcs0695",
+    name: "Muhammad Aqib",
+    class: "6th Semister"
+}
+// std1.regNo = "18pwbcs0695"       //can't change or overwrite...
+const std2:student = {
+    regNo: "19pwbcs0697",
+    name: "Mazhar Hussain",
+    class: "6th semister",
+    phone: 10101010101
+}
+
+
 
 // type conversion 
 let a:any = "1";
 let b= a as number
 
 
-// function...
+
+
+
+// Functions...
 
 type userInfo = {
     name: string,
-    address: string
+    address: string,
+    age?: number
 }
 function userObj(user:userInfo) : userInfo {
     return { name: user.name, address: user.address };
 }
+let userfunc = userObj({name: "Aqib", address:"Peshawar Kohat Road"})
+console.log(userfunc)
 
-console.log(userObj({name: "Aqib", address:"Peshawar Kohat Road"}))
-
-// another function
-function  add(a1:number ,b1:number) : number{
-    return a1 + b1
+// another function with interface...
+interface Numfun{
+    (x: number, y:number) : number
 }
 
-console.log(add(1,2))
+// arrow function...
+let sum:Numfun = (a:number, b:number):number => a + b;
+console.log( sum(1,2) )

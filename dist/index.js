@@ -25,15 +25,26 @@ let u1 = {
     id: 1,
     name: "Muhammad Aqib"
 };
+const std1 = {
+    regNo: "19pwbcs0695",
+    name: "Muhammad Aqib",
+    class: "6th Semister"
+};
+// std1.regNo = "18pwbcs0695"       //can't change or overwrite...
+const std2 = {
+    regNo: "19pwbcs0697",
+    name: "Mazhar Hussain",
+    class: "6th semister",
+    phone: 10101010101
+};
 // type conversion 
 let a = "1";
 let b = a;
 function userObj(user) {
     return { name: user.name, address: user.address };
 }
-console.log(userObj({ name: "Aqib", address: "Peshawar Kohat Road" }));
-// another function
-function add(a1, b1) {
-    return a1 + b1;
-}
-console.log(add(1, 2));
+let userfunc = userObj({ name: "Aqib", address: "Peshawar Kohat Road" });
+console.log(userfunc);
+// arrow function...
+let sum = (a, b) => a + b;
+console.log(sum(1, 2));
