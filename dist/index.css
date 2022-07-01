@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(10, 10, 9);
+    color: rgb(244, 244, 244);
+}
+header{
+    background-color: rgb(1, 180, 94);
+    padding: 20px;
+    text-align: center;
+}
